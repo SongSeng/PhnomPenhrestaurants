@@ -82,6 +82,12 @@
             .white{
                 color: white;
             }
+            .yellow{
+                color: yellow;
+            }
+            .orange{
+                color: orange;
+            }
             .pad-top{
                 padding-top: 30px;
             }
@@ -124,30 +130,17 @@
                 </div>
                 <hr> <hr> <hr>
 
-            <div class="card-body col-sm-12">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Location</th>
-                      <th>Decription</th>
-                      <th class="center">Rating</th>
-                      
-                    </thead>
-                    <tbody>
-                    @foreach ($restaurants as $restaurant)
-                        <tr>
-                        <td>{{ $restaurant->restaurant_name }}</td>
-                        <td>{{ $restaurant->restaurant_type }}</td>
-                        <td>{{ $restaurant->restaurant_location }}</td>
-                        <td>{{ $restaurant->restaurant_decription }}</td>
-                        <td class="center">{{ $restaurant->restaurant_rating }}</td>
+                  @foreach ($restaurants as $restaurant)
+                    <div class="card-header">
                         
-                        </tr>
-                    @endforeach
-                    </tbody>
-                  </table>
+                        <h4 class="card-title">{{ $restaurant->restaurant_name }} 
+                        <b class="float-right orange">Rating: {{ $restaurant->restaurant_rating }} </b></h4>
+                        <h5 class="card-category">{{ $restaurant->restaurant_type }}</h5>
+                        <p>{{ $restaurant->restaurant_location }}</p>
+                        <p>{{ $restaurant->restaurant_decription }}</p>
+
+                    </div>
+                  @endforeach
                 </div>
               </div>
 
